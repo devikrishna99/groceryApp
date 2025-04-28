@@ -42,8 +42,8 @@ public class FakerUtility {
 	public String generateAnimalName() {
 		return faker.animal().name();
 	}
-	public String generatebookTitle() {
-		return faker.book().title();
+	public String generatefoodname() {
+		return faker.food().dish();
 	}
 	public String generatenews() {
 		return faker.lorem().sentence();

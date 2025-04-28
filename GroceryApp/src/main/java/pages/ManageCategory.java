@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import constants.Constants;
+import utilities.FakerUtility;
 import utilities.FileupLoadUtility;
 import utilities.Pageutility;
 import utilities.WaitUtilities;
@@ -17,6 +18,7 @@ public class ManageCategory {
 	 Pageutility page =new Pageutility();
 	 FileupLoadUtility upload = new FileupLoadUtility();
 	 WaitUtilities wait= new WaitUtilities();
+	 FakerUtility faker = new FakerUtility();
 	
 	 
 	 public ManageCategory(WebDriver driver) {
@@ -39,7 +41,7 @@ public class ManageCategory {
 		 return this;
 	 }
 	 public ManageCategory clickonInputCategory() {
-		 inputCategory.sendKeys("FoodBread_Slice13");
+		 inputCategory.sendKeys(faker.generatefoodname());
 		 return this;
 	 }
 	 public ManageCategory clickonSelectGroups() {
