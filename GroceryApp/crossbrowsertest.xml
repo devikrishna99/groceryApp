@@ -15,7 +15,7 @@
 	<parameter name="browser" value="Edge"></parameter>
 		<classes>
 
-			<class name="testScript.ManageFootertextTest"></class>
+			<class name="testScript.ManageNewsTest"></class>
 
 
 		</classes>
