@@ -80,7 +80,7 @@ public class SubCategory {
 	}
 
 	public SubCategory clickOnsaveButton() {
-		saveButton.click();
+		page.clickJavaScriptExecutor(saveButton, driver);
 		return this;
 	}
 
