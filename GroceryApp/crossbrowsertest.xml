@@ -1,0 +1,23 @@
+<suite name="crossbrowser Testing" >
+	
+
+
+	<test name="chrome test">
+	<parameter name="browser" value="Chrome"></parameter>
+		<classes>
+
+			<class name="testScript.SubCategoryTest"></class>
+
+
+		</classes>
+	</test>
+	<test name="Edge test">
+	<parameter name="browser" value="Edge"></parameter>
+		<classes>
+
+			<class name="testScript.ManageFootertextTest"></class>
+
+
+		</classes>
+	</test>
+</suite>

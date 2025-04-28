@@ -1,0 +1,23 @@
+<suite name="Multi browser Testing" parallel="tests" thread-count="2">
+	
+
+
+	<test name="ChromeTest" thread-count="5">
+	<parameter name="browser" value="Chrome"></parameter>
+		<classes>
+
+			<class name="testScript.ManageFootertextTest"></class>
+
+
+		</classes>
+	</test>
+	<test name="EdgeTest" thread-count="5">
+	<parameter name="browser" value="Edge"></parameter>
+		<classes>
+
+			<class name="testScript.ManageFootertextTest"></class>
+
+
+		</classes>
+	</test>
+</suite>
