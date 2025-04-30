@@ -23,6 +23,7 @@ public class BaseClass {
 	FileInputStream fileinput;
 	Properties properties;
 	public WebDriver driver;
+	 WaitUtilities waitutility = new WaitUtilities();
   
   @BeforeMethod(alwaysRun=true)
   @Parameters("browser")
@@ -50,7 +51,7 @@ public class BaseClass {
 	  
 	  driver.get(properties.getProperty("url"));
 	  driver.manage().window().maximize();
-	  WaitUtilities waitutility = new WaitUtilities();
+	 
 	  waitutility.implicitWait(driver);
   }
 
