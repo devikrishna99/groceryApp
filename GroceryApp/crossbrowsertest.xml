@@ -6,7 +6,7 @@
 	<parameter name="browser" value="Chrome"></parameter>
 		<classes>
 
-			<class name="testScript.SubCategoryTest"></class>
+			<class name="testScript.ManageContactTest"></class>
 
 
 		</classes>
