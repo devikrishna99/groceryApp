@@ -23,17 +23,17 @@ public class FileupLoadUtility {
 		
 		
 		
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);//coping to system clipboard
-		Robot robo = new Robot();//inbuilt class to perform keyboard and mouse actions
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+		Robot robo = new Robot();
 		robo.delay(500);
-		robo.keyPress(KeyEvent.VK_CONTROL);//press control key
-		robo.keyPress(KeyEvent.VK_V);//for pressing v-pasting
+		robo.keyPress(KeyEvent.VK_CONTROL);
+		robo.keyPress(KeyEvent.VK_V);
 		robo.delay(500);
-		robo.keyRelease(KeyEvent.VK_CONTROL);//for releasing the enter key
-		robo.keyRelease(KeyEvent.VK_V);// for releasing the v(pasting) key
+		robo.keyRelease(KeyEvent.VK_CONTROL);
+		robo.keyRelease(KeyEvent.VK_V);
 		robo.delay(500);
-		robo.keyPress(KeyEvent.VK_ENTER);//press enter key
-		robo.keyRelease(KeyEvent.VK_ENTER);//release enter key
+		robo.keyPress(KeyEvent.VK_ENTER);
+		robo.keyRelease(KeyEvent.VK_ENTER);
 		
 	}
 }

@@ -19,51 +19,43 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
 public class BaseClass {
-	
+
 	FileInputStream fileinput;
 	Properties properties;
 	public WebDriver driver;
-	 WaitUtilities waitutility = new WaitUtilities();
-  
-  @BeforeMethod(alwaysRun=true)
-  @Parameters("browser")
-  public void initializeBrowser(String browser) throws Exception {
-	  properties = new Properties();
-	  fileinput = new FileInputStream(Constants.CONFIGFILE);
-	  properties.load(fileinput);//called url and url is loaded here
-	  
-	  if(browser.equalsIgnoreCase("Chrome")) {
-		  driver= new ChromeDriver();
-	  }
-	  else if(browser.equalsIgnoreCase("Edge")) {
-		  driver = new EdgeDriver();
-	  }
-	  else if(browser.equalsIgnoreCase("Firefox")) {
-		  driver = new FirefoxDriver();
-	  }
-	  else 
-	  {
-		  throw new Exception("Invalid Browser");
-	  }
-	  
-		  
-	  
-	  
-	  driver.get(properties.getProperty("url"));
-	  driver.manage().window().maximize();
-	 
-	  waitutility.implicitWait(driver);
-  }
+	WaitUtilities waitutility = new WaitUtilities();
 
-  @AfterMethod(alwaysRun=true)
-  
-  public void browserQuit(ITestResult itestresult) throws IOException {
-	  if(itestresult.getStatus()==ITestResult.FAILURE)
-		{
-			ScreenshotUtility screenshot =new ScreenshotUtility();
+	@BeforeMethod(alwaysRun = true)
+	@Parameters("browser")
+	public void initializeBrowser(String browser) throws Exception {
+		properties = new Properties();
+		fileinput = new FileInputStream(Constants.CONFIGFILE);
+		properties.load(fileinput);
+
+		if (browser.equalsIgnoreCase("Chrome")) {
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("Edge")) {
+			driver = new EdgeDriver();
+		} else if (browser.equalsIgnoreCase("Firefox")) {
+			driver = new FirefoxDriver();
+		} else {
+			throw new Exception("Invalid Browser");
+		}
+
+		driver.get(properties.getProperty("url"));
+		driver.manage().window().maximize();
+
+		waitutility.implicitWait(driver);
+	}
+
+	@AfterMethod(alwaysRun = true)
+
+	public void browserQuit(ITestResult itestresult) throws IOException {
+		if (itestresult.getStatus() == ITestResult.FAILURE) {
+			ScreenshotUtility screenshot = new ScreenshotUtility();
 			screenshot.getScreenshot(driver, itestresult.getName());
 		}
-	  driver.quit();
-  }
+		driver.quit();
+	}
 
 }
